@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Libraff - Onlayn Kitab Mağazası</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/classic.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="shortcut icon" href="LibraffLogo.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="w-[95vw] py-[30px] mx-auto relative">
+        <div class="flex justify-between my-[5px] items-center">
+          <div class="flex gap-[20px] items-center">
+            <div class="flex lg:hidden xl:hidden">
+              <i
+                class="fa-sharp fa-solid fa-bars text-3xl"
+                style="color: #000000"
+              ></i>
+            </div>
+            <a href="index.htm">
+              <img class="max-w-[200px]" src="img/logo_b1x3-5c.png" alt="" />
+            </a>
+          </div>
+
+          <div class="hidden items-center gap-[20px] lg:flex xl:flex">
+            <div onclick="openCategModal()">
+              <button
+                class="py-[9px] flex items-center gap-[5px] bg-[#EF3340] px-[15px] text-[#FFF] font-semibold rounded-3xl"
+              >
+                <div id="categIcon" class="flex flex-col gap-[3px]">
+                  <div class="flex gap-[3px]">
+                    <div
+                      class="w-[8px] h-[8px] border-[#fff] border-[2px]"
+                    ></div>
+                    <div
+                      class="w-[8px] h-[8px] border-[#fff] border-[2px]"
+                    ></div>
+                  </div>
+                  <div class="flex gap-[3px]">
+                    <div
+                      class="w-[8px] h-[8px] border-[#fff] border-[2px]"
+                    ></div>
+                    <div
+                      class="w-[8px] h-[8px] border-[#fff] border-[2px]"
+                    ></div>
+                  </div>
+                </div>
+                <div id="categIcon2" class="hidden">
+                  <i
+                    class="fa-solid fa-xmark text-2xl"
+                    style="color: #ffffff"
+                  ></i>
+                </div>
+                <div class="hidden xl:block">Katalog</div>
+              </button>
+            </div>
+            <div class="flex">
+              <input
+                class="w-[500px] py-[10px] text-[#333] focus:outline-none focus:cursor-text rounded-3xl rounded-r-none border-r-0 px-[10px] font-semibold border-[solid] border-[#CBD5E1] border-[1px] bg-[#F8FAFC]"
+                type="text"
+                placeholder="Növbəti kitabınızı axtarın"
+              />
+              <button
+                class="py-[12px] border-[solid] px-[10px] border-[#CBD5E1] border-l-0 border-[1px] rounded-3xl rounded-l-none bg-[#F8FAFC]"
+              >
+                <i
+                  class="fa-solid fa-magnifying-glass text-2xl"
+                  style="color: #000000"
+                ></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="flex gap-[20px] items-center">
+            <div
+              onclick="showLanbBar()"
+              class="hidden cursor-pointer lg:flex xl:flex items-center gap-[3px]"
+            >
+              <p class="text-xl">Az</p>
+              <span class="text-sm">⮟</span>
+            </div>
+            <div
+              class="flex userBox items-center gap-[10px] px-[15px] py-[7px] rounded-3xl xl:bg-[#F4F6FC] bg-none"
+            >
+              <i
+                class="fa-regular fa-circle-user text-2xl"
+                style="color: #0f172a"
+              ></i>
+              <p
+                onclick="showUserBar()"
+                class="text-lg cursor-pointer font-semibold hidden xl:block"
+              >
+                Hesabım <span class="text-sm">⮟</span>
+              </p>
+            </div>
+            <div class="hidden lg:block xl:block">
+              <a
+                href="whislist.htm"
+                class="fa-regular fa-heart text-2xl"
+                style="color: #0f172a"
+              ></a>
+            </div>
+            <div class="shopBox">
+              <i
+                class="fa-solid fa-bag-shopping text-2xl"
+                style="color: #0f172a"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-[15px] flex lg:hidden xl:hidden">
+          <input
+            class="w-[100%] py-[12px] text-[#333] rounded-3xl focus:outline-none rounded-r-none border-r-0 px-[10px] font-semibold border-[solid] border-[#CBD5E1] border-[1px] bg-[#F8FAFC]"
+            type="text"
+            placeholder="Növbəti kitabınızı axtarın"
+          />
+          <button
+            class="py-[12px] border-[solid] px-[10px] border-[#CBD5E1] border-l-0 border-[1px] rounded-3xl rounded-l-none bg-[#F8FAFC]"
+          >
+            <i
+              class="fa-solid fa-magnifying-glass text-2xl"
+              style="color: #000000"
+            ></i>
+          </button>
+        </div>
+      </nav>
+
+      <div
+        id="langBar"
+        class="py-[10px] px-[15px] hidden rounded-2xl absolute top-[75px] right-[19%] shadow-xl bg-red-50 w-fit"
+      >
+        <ul>
+          <li class="font-light text-[17px] text-red-500">Ru</li>
+          <li class="font-light text-[17px] text-red-500">Az</li>
+        </ul>
+      </div>
+
+      <div
+        id="userBar"
+        class="w-[20%] hidden absolute top-[90px] right-[7%] z-20 shadow-2xl rounded-2xl overflow-hidden flex-col gap-[10px] bg-slate-50"
+      >
+        <div class="py-[10px] px-[10px]">
+          <ul class="flex flex-col gap-[10px]">
+            <li>Sifarişlər</li>
+            <li>Qaytarma sorğuları</li>
+            <li>Seçilmişlər</li>
+          </ul>
+        </div>
+        <div class="bg-slate-200 py-[10px] px-[10px] flex flex-col gap-[10px]">
+          <span>Sifarişi izləmək</span>
+          <div class="flex">
+            <input
+              class="w-[80%] py-[10px] px-[10px] rounded-md rounded-r-none"
+              type="text"
+              placeholder="Sifariş nömrəsi/E-poçt"
+            />
+            <button class="text-xl bg-slate-100 rounded-r-md px-[13px]">
+              ➤
+            </button>
+          </div>
+          <div class="flex justify-between">
+            <button class="px-[10px] bg-black rounded-2xl text-[#fff] py-[4px]">
+              Daxil ol
+            </button>
+            <button
+              class="px-[10px] bg-red-700 rounded-2xl text-[#fff] py-[4px]"
+            >
+              Qeydiyyat
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <nav
+        id="mobilNav"
+        class="flex items-center fixed bottom-[0px] z-50 justify-around lg:hidden xl:hidden md:hidden w-[100%] h-[60px] bg-[#fff] shadow-2xl px-[20px]"
+      >
+        <div class="flex flex-col items-center">
+          <i class="fa-solid fa-bars text-2xl" style="color: #9ba9bc"></i>
+          <p class="font-medium text-[#9BA9BC]">Menu</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <i
+            class="fa-solid fa-magnifying-glass text-2xl"
+            style="color: #9ba9bc"
+          ></i>
+          <p class="font-medium text-[#9BA9BC]">Axtarış</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <i
+            class="fa-solid fa-basket-shopping text-2xl"
+            style="color: #9ba9bc"
+          ></i>
+          <p class="font-medium text-[#9BA9BC]">Səbət</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <i
+            onclick="openUserMenuMobile()"
+            class="fa-solid fa-circle-user text-2xl"
+            style="color: #9ba9bc"
+          ></i>
+          <p class="font-medium text-[#9BA9BC]">Hesabım</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <i class="fa-solid fa-phone text-2xl" style="color: #9ba9bc"></i>
+          <p class="font-medium text-[#9BA9BC]">Əlaqə</p>
+        </div>
+      </nav>
+    </header>
+    <div
+      class="lg:flex xl:flex justify-between w-[95vw] mx-auto my-[10px] hidden"
+    >
+      <ul class="flex gap-[10px] font-sans text-[#334155]">
+        <li class="font-bold"><a href="">Bestseller</a></li>
+        <li class="font-bold"><a href="">Endirimlər</a></li>
+        <li class="font-bold"><a href="">Müəlliflər</a></li>
+        <li class="font-bold">
+          <a href="classic.htm">Klassiklər</a>
+        </li>
+      </ul>
+      <ul class="flex gap-[10px] font-sans">
+        <li class="text-[#617ca0]">
+          <a href="">Ödəniş və çatdırılma</a>
+        </li>
+        <li class="text-[#617ca0]"><a href="">Loyallıq Kartı</a></li>
+        <li class="text-[#617ca0]"><a href="">FAQ</a></li>
+        <li class="text-[#617ca0]"><a href="">Əlaqə</a></li>
+      </ul>
+    </div>
+    <div id="cataloqModal" class="hidden">
+      <div
+        class="w-[80vw] bg-white text-[#0f172a] text-[18px] font-[Nunito] flex absolute rounded-xl overflow-hidden z-20 right-[10%] top-[100px] shadow-2xl"
+      >
+        <div class="w-[25%] min-h-[500px] bg-slate-50 px-[10px] py-[10px]">
+          <ul id="categs" class="flex flex-col gap-[15px]"></ul>
+        </div>
+        <div class="w-[25%] min-h-[300px] bg-slate-100 px-[10px] py-[10px]">
+          <ul id="subCategory" class="flex flex-col gap-[15px]"></ul>
+        </div>
+        <div
+          class="w-[50%] min-h-[300px] flex gap-[50px] px-[10px] py-[10px] bg-slate-200"
+        >
+          <ul id="sub2Category" class="flex flex-col gap-[15px]"></ul>
+        </div>
+        <div></div>
+      </div>
+    </div>
+
+    <div
+      id="userBarMobile"
+      class="w-[100%] absolute bottom-[-400px] hidden z-20 shadow-2xl shadow-[#333] p-0 overflow-hidden flex-col bg-slate-50"
+    >
+      <div class="py-[10px] px-[20px]">
+        <ul class="flex flex-col gap-[10px]">
+          <li>Sifarişlər</li>
+          <li>Qaytarma sorğuları</li>
+          <li>Seçilmişlər</li>
+        </ul>
+      </div>
+      <div
+        class="bg-slate-200 py-[10px] px-[20px] h-[200px] flex flex-col gap-[10px]"
+      >
+        <span>Sifarişi izləmək</span>
+        <div class="flex">
+          <input
+            class="w-[90%] py-[10px] px-[10px] rounded-md rounded-r-none"
+            type="text"
+            placeholder="Sifariş nömrəsi/E-poçt"
+          />
+          <button class="text-xl bg-slate-100 rounded-r-md px-[13px]">➤</button>
+        </div>
+        <div class="flex justify-between">
+          <button
+            class="px-[10px] bg-black rounded-2xl text-[#fff] py-[6px] w-[40%]"
+          >
+            Daxil ol
+          </button>
+          <button
+            class="px-[10px] bg-red-700 rounded-2xl text-[#fff] py-[6px] w-[40%]"
+          >
+            Qeydiyyat
+          </button>
+        </div>
+      </div>
+            
+    </div>
+
+    <main>
+      <hr class="container" />
+      <div class="w-[95vw] mx-auto">
+        <h1 class="font-bold font-sans text-3xl container pb-[10px] pt-[20px]">
+          Seçilmişlər
+        </h1>
+        <p class="container text-[14px] pb-[20px] font-[Nunoti] text-[#9c9c9c]">
+          <a href="index.htm" class="hover:text-red-400">Əsas səhifə</a> /
+          <a href="whislist.htm" class="hover:text-red-400">Seçilmişlər</a>
+        </p>
+        <div id="secilmiskitablar" class="cards"></div>
+      </div>
+    </main>
+    <!-- Səbət -->
+    <div class="relative inline-block text-left">
+      <!-- Cart Menu -->
+      <div
+        id="cartMenu"
+        class="absolute right-0 mt-2 w-72 bg-white rounded-xl shadow-xl border border-gray-100 z-50 hidden"
+      >
+        <div
+          class="px-4 pt-3 pb-1 flex justify-between items-center text-sm font-semibold text-gray-700"
+        >
+          Səbətdəki məhsullar:
+          <button id="closeCart" class="text-gray-500 hover:text-black">
+            &times;
+          </button>
+        </div>
+        <div id="cart" class="px-4 py-6 text-sm text-center text-gray-500">
+          <p id="empty-cart-msg">Səbət boşdur</p>
+          <ul id="cart-items" class="space-y-2 mt-2"></ul>
+          <p class="mt-2 font-semibold">
+            Toplam: <span id="cart-total">0</span> AZN
+          </p>
+        </div>
+        <div class="border-t border-gray-100 px-4 py-3">
+          <button
+            class="w-full border border-red-500 text-red-600 py-2 rounded-full text-sm font-semibold hover:bg-red-50 transition"
+          >
+            Sifaris Ver
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-gray-100 text-gray-800 text-sm mt-10">
+      <div
+        class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+      >
+        <div>
+          <h3 class="text-lg font-semibold mb-3 text-slate-600">Hesabım</h3>
+          <ul class="space-y-3">
+            <li><a href="#">Daxil ol</a></li>
+            <li><a href="#">Qeydiyyatdan keç</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-3 text-slate-600">Şirkət</h3>
+          <ul class="space-y-3">
+            <li><a href="#">Haqqımızda</a></li>
+            <li><a href="#">Əlaqə</a></li>
+            <li><a href="#">Vakansiyalar</a></li>
+            <li><a href="#">Sayt Xəritəsi</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-3 text-slate-600">
+            Müştəri Xidməti
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="#">Dəyişdirilmə və qaytarılma</a>
+            </li>
+            <li>
+              <a href="#">Ödəniş və çatdırılma</a>
+            </li>
+            <li>
+              <a href="#">Sifarişiniz haqqında</a>
+            </li>
+            <li><a href="#">Seçilmişlər</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-3 text-slate-600">Əlaqə</h3>
+          <ul class="space-y-3">
+            <li>
+              Bakı, Badamdar qəs., Mikayıl Müşfiq küç. 1c <br />(Badamdar
+              Estates)
+            </li>
+            <li>
+              <a href="tel:+994502904496">+994-50-290-44-96</a>
+            </li>
+            <li>B.e.-B. 9.00 - 18.00</li>
+            <li>
+              <a href="mailto:online@libraff.az">online@libraff.az</a>
+            </li>
+            <li>
+              <a
+                href="https://yandex.az/maps/10253/baku/house/YEAYfgdjS0cPQFpqfX90dXVmZA==/?ll=49.803228%2C40.354951&z=16"
+                class="text-blue-700"
+                >Xəritədə bax</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-left text-gray-600 py-4 px-4 border-t border-gray-300">
+        © 2017 - 2025 Libraff.
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/whislist.js"></script>
+  </body>
+</html>

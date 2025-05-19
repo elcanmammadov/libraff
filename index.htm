@@ -1,0 +1,1290 @@
+<!DOCTYPE html>```
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Libraff - Onlayn Kitab Mağazası</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="src/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="shortcut icon" href="LibraffLogo.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="w-[95vw] py-[30px] mx-auto relative">
+        <div class="flex justify-between my-[5px] items-center">
+          <div class="flex gap-[20px] items-center">
+            <div class="flex lg:hidden xl:hidden">
+              <i
+                class="fa-sharp fa-solid fa-bars text-3xl"
+                style="color: #000000"
+              ></i>
+            </div>
+            <a href="index.htm">
+              <img class="max-w-[200px]" src="img/logo_b1x3-5c.png" alt="" />
+            </a>
+          </div>
+
+          <div class="hidden items-center gap-[20px] lg:flex xl:flex">
+            <div onclick="openCategModal()">
+              <button
+                class="py-[10px] flex items-center gap-[5px] bg-[#EF3340] px-[15px] text-[#FFF] font-semibold rounded-3xl"
+              >
+                <div id="categIcon" class="flex flex-col gap-[3px]">
+                  <div class="flex gap-[3px]">
+                    <div
+                      class="w-[8px] h-[8px] border-[#fff] border-[2px]"
+                    ></div>
+                    <div
+                      class="w-[8px] h-[8px] border-[#fff] border-[2px]"
+                    ></div>
+                  </div>
+                  <div class="flex gap-[3px]">
+                    <div
+                      class="w-[8px] h-[8px] border-[#fff] border-[2px]"
+                    ></div>
+                    <div
+                      class="w-[8px] h-[8px] border-[#fff] border-[2px]"
+                    ></div>
+                  </div>
+                </div>
+                <div id="categIcon2" class="hidden">
+                  <i
+                    class="fa-solid fa-xmark text-2xl"
+                    style="color: #ffffff"
+                  ></i>
+                </div>
+                <div class="hidden xl:block w-35">Katalog</div>
+              </button>
+            </div>
+           <div class="flex">
+
+<input
+  class="w-[500px] py-[10px] text-[#333] focus:outline-none focus:cursor-text rounded-3xl rounded-r-none border-r-0 px-[10px] font-semibold border-[solid] border-[#CBD5E1] border-[1px] bg-[#F8FAFC] focus:shadow-md transition-shadow duration-400"
+  type="text"
+  placeholder="Növbəti kitabınızı axtarın"
+  onfocus="this.placeholder=''"
+  onblur="this.placeholder='Növbəti kitabınızı axtarın'"
+/>
+
+  <button
+    class="py-[6px] border-[solid] px-[10px] border-[#CBD5E1] border-l-0 border-[1px] rounded-3xl rounded-l-none bg-[#F8FAFC]"
+  >
+    <i
+      class="fa-solid fa-magnifying-glass text-2xl"
+      style="color: #000000"
+    ></i>
+  </button>
+</div>
+          <div class="flex gap-[20px] items-center">
+            <div
+              onclick="showLanbBar()"
+              class="hidden cursor-pointer lg:flex xl:flex items-center gap-[3px]"
+            >
+              <p class="text-xl">Az</p>
+              <span class="text-sm">⮟</span>
+            </div>
+            <div
+              class="flex userBox items-center gap-[10px] px-[15px] py-[7px] rounded-3xl xl:bg-[#F4F6FC] bg-none"
+            >
+              <i
+                class="fa-regular fa-circle-user text-2xl"
+                style="color: #0f172a"
+              ></i>
+              <p
+                onclick="showUserBar()"
+                class="text-lg cursor-pointer font-semibold hidden xl:block"
+              >
+                Hesabım <span class="text-sm">⮟</span>
+              </p>
+            </div>
+            <div class="hidden lg:block xl:block">
+              <a
+                href="whislist.htm"
+                class="fa-regular cursor-pointer fa-heart text-2xl"
+                style="color: #0f172a"
+              ></a>
+            </div>
+            <div class="shopBox">
+              <a
+                onclick="sebet()"
+                class="fa-solid cursor-pointer fa-bag-shopping text-2xl"
+                style="color: #0f172a"
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-[15px] flex lg:hidden xl:hidden">
+          <input
+            class="w-[100%] py-[12px] text-[#333] rounded-3xl focus:outline-none rounded-r-none border-r-0 px-[10px] font-semibold border-[solid] border-[#CBD5E1] border-[1px] bg-[#F8FAFC]"
+            type="text"
+            placeholder="Növbəti kitabınızı axtarın"
+          />
+          <button
+            class="py-[12px] border-[solid] px-[10px] border-[#CBD5E1] border-l-0 border-[1px] rounded-3xl rounded-l-none bg-[#F8FAFC]"
+          >
+            <i
+              class="fa-solid fa-magnifying-glass text-2xl"
+              style="color: #000000"
+            ></i>
+          </button>
+        </div>
+      </nav>
+      
+<div
+  id="langBar"
+  class="py-[10px] px-[15px] hidden rounded-2xl absolute top-[75px] right-[19%] shadow-xl bg-red-50 w-fit"
+>
+  <ul class="flex flex-col gap-2">
+    <li class="font-light text-[17px] text-red-500 cursor-pointer">Ru</li>
+    <li class="font-light text-[17px] text-red-500 cursor-pointer">Az</li>
+  </ul>
+</div>
+
+      <div
+        id="userBar"
+        class="w-[20%] hidden absolute top-[90px] right-[7%] z-20 shadow-2xl rounded-2xl overflow-hidden flex-col gap-[10px] bg-slate-50"
+      >
+        <div class="py-[10px] px-[10px]">
+          <ul class="flex flex-col gap-[10px]">
+            <li>Sifarişlər</li>
+            <li>Qaytarma sorğuları</li>
+            <li>Seçilmişlər</li>
+          </ul>
+        </div>
+        <div class="bg-slate-200 py-[10px] px-[10px] flex flex-col gap-[10px]">
+          <span>Sifarişi izləmək</span>
+          <div class="flex">
+            <input
+              class="w-[80%] py-[10px] px-[10px] rounded-md rounded-r-none"
+              type="text"
+              placeholder="Sifariş nömrəsi/E-poçt"
+            />
+            <button class="text-xl bg-slate-100 rounded-r-md px-[13px]">
+              ➤
+            </button>
+          </div>
+          <div class="flex justify-between">
+            <button class="px-[10px] bg-black rounded-2xl text-[#fff] py-[4px]">
+              Daxil ol
+            </button>
+            <button
+              class="px-[10px] bg-red-700 rounded-2xl text-[#fff] py-[4px]"
+            >
+              Qeydiyyat
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <nav
+        id="mobilNav"
+        class="flex items-center fixed bottom-[0px] z-50 justify-around lg:hidden xl:hidden md:hidden w-[100%] h-[60px] bg-[#fff] shadow-2xl px-[20px]"
+      >
+        <div class="flex flex-col items-center">
+          <i class="fa-solid fa-bars text-2xl" style="color: #9ba9bc"></i>
+          <p class="font-medium text-[#9BA9BC]">Menu</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <i
+            class="fa-solid fa-magnifying-glass text-2xl"
+            style="color: #9ba9bc"
+          ></i>
+          <p class="font-medium text-[#9BA9BC]">Axtarış</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <i
+            class="fa-solid fa-basket-shopping text-2xl"
+            style="color: #9ba9bc"
+          ></i>
+          <p class="font-medium text-[#9BA9BC]">Səbət</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <i
+            onclick="openUserMenuMobile()"
+            class="fa-solid fa-circle-user text-2xl"
+            style="color: #9ba9bc"
+          ></i>
+          <p class="font-medium text-[#9BA9BC]">Hesabım</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <i class="fa-solid fa-phone text-2xl" style="color: #9ba9bc"></i>
+          <p class="font-medium text-[#9BA9BC]">Əlaqə</p>
+        </div>
+      </nav>
+    </header>
+    <div
+      class="lg:flex xl:flex justify-between w-[95vw] mx-auto my-[10px] hidden"
+    >
+      <ul class="flex gap-[10px] font-sans text-[#334155]">
+        <li class="font-bold"><a href="">Bestseller</a></li>
+        <li class="font-bold"><a href="">Endirimlər</a></li>
+        <li class="font-bold"><a href="author.htm">Müəlliflər</a></li>
+        <li class="font-bold"><a href="classic.htm">Klassiklər</a></li>
+      </ul>
+      <ul class="flex gap-[10px] font-sans">
+        <li class="text-[#617ca0]">
+          <a href="">Ödəniş və çatdırılma</a>
+        </li>
+        <li class="text-[#617ca0]"><a href="">Loyallıq Kartı</a></li>
+        <li class="text-[#617ca0]"><a href="">FAQ</a></li>
+        <li class="text-[#617ca0]"><a href="">Əlaqə</a></li>
+      </ul>
+    </div>
+
+    <div id="cataloqModal" class="hidden">
+      <div
+        class="w-[80vw] bg-white text-[#0f172a] text-[18px] font-[Nunito] flex absolute rounded-xl overflow-hidden z-20 right-[10%] top-[100px] shadow-2xl"
+      >
+        <div class="w-[25%] min-h-[500px] bg-slate-50 px-[10px] py-[10px]">
+          <ul id="categs" class="flex flex-col gap-[15px]"></ul>
+        </div>
+        <div class="w-[25%] min-h-[300px] bg-slate-100 px-[10px] py-[10px]">
+          <ul id="subCategory" class="flex flex-col gap-[15px]"></ul>
+        </div>
+        <div
+          class="w-[50%] min-h-[300px] flex gap-[50px] px-[10px] py-[10px] bg-slate-200"
+        >
+          <ul id="sub2Category" class="flex flex-col gap-[15px]"></ul>
+        </div>
+        <div></div>
+      </div>
+    </div>
+
+    <div
+      id="userBarMobile"
+      class="w-[100%] absolute bottom-[-400px] hidden z-20 shadow-2xl shadow-[#333] p-0 overflow-hidden flex-col bg-slate-50"
+    >
+      <div class="py-[10px] px-[20px]">
+        <ul class="flex flex-col gap-[10px]">
+          <li>Sifarişlər</li>
+          <li>Qaytarma sorğuları</li>
+          <li>Seçilmişlər</li>
+        </ul>
+      </div>
+      <div
+        class="bg-slate-200 py-[10px] px-[20px] h-[200px] flex flex-col gap-[10px]"
+      >
+        <span>Sifarişi izləmək</span>
+        <div class="flex">
+          <input
+            class="w-[90%] py-[10px] px-[10px] rounded-md rounded-r-none"
+            type="text"
+            placeholder="Sifariş nömrəsi/E-poçt"
+          />
+          <button class="text-xl bg-slate-100 rounded-r-md px-[13px]">➤</button>
+        </div>
+        <div class="flex justify-between">
+          <button
+            class="px-[10px] bg-black rounded-2xl text-[#fff] py-[6px] w-[40%]"
+          >
+            Daxil ol
+          </button>
+          <button
+            class="px-[10px] bg-red-700 rounded-2xl text-[#fff] py-[6px] w-[40%]"
+          >
+            Qeydiyyat
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div data-dial-init class="fixed z-50 end-6 bottom-6 group">
+      <div
+        id="speed-dial-menu-bottom-right"
+        class="hidden flex-col items-center mb-4 space-y-2"
+      >
+        <button
+          type="button"
+          data-tooltip-target="tooltip-download"
+          data-tooltip-placement="left"
+          class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 rounded-full border border-gray-200 dark:border-gray-600 shadow-xs dark:hover:text-white dark:text-gray-400 bg-[#2563eb] focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400"
+        >
+          <i class="fa-brands fa-whatsapp text-3xl" style="color: #fff"></i>
+          <span class="sr-only">Whatsapp</span>
+        </button>
+        <div
+          id="tooltip-download"
+          role="tooltip"
+          class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-[#2563eb] rounded-lg shadow-xs opacity-0 tooltip"
+        >
+          Whatsapp
+          <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
+        <button
+          type="button"
+          data-tooltip-target="tooltip-copy"
+          data-tooltip-placement="left"
+          class="flex justify-center items-center w-[52px] h-[52px] text-gray-500 hover:text-gray-900 rounded-full border border-gray-200 dark:border-gray-600 dark:hover:text-white shadow-xs dark:text-gray-400 bg-[#2563eb] focus:ring-4 focus:ring-gray-300 focus:outline-none dark:focus:ring-gray-400"
+        >
+          <i class="fa-solid fa-envelope text-3xl" style="color: #fff"></i>
+          <span class="sr-only">Email</span>
+        </button>
+        <div
+          id="tooltip-copy"
+          role="tooltip"
+          class="absolute z-10 invisible inline-block w-auto px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-[#2563eb] rounded-lg shadow-xs opacity-0 tooltip"
+        >
+          Email
+          <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
+      </div>
+      <button
+        type="button"
+        data-dial-toggle="speed-dial-menu-bottom-right"
+        aria-controls="speed-dial-menu-bottom-right"
+        aria-expanded="false"
+        class="flex items-center justify-center text-white bg-blue-700 rounded-full w-14 h-14 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800"
+      >
+        <i
+          class="fa-regular fa-comment-dots text-3xl"
+          style="color: #ffffff"
+        ></i>
+        <span class="sr-only">Open actions menu</span>
+      </button>
+    </div>
+
+    <main>
+      <div id="slider">
+        <div id="desktopSlider" class="hidden md:block lg:block xl:block">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="img/Dr.-Ferhat-Aslan---İmza-saatı-web-_es67-h9.webp" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/Banner_Desktop_v2.webp" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/slider3.webp" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/slider4.webp" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/slider2.webp" alt="" />
+              </div>
+            </div>
+            <div id="swpagination" class="swiper-pagination"></div>
+          </div>
+        </div>
+        <div id="mobileSlider" class="block md:hidden lg:hidden xl:hidden">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide bg-[]">
+                <img src="img/mobileSlider1.webp" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/mobileSlider2.webp" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/mobileSlider3.webp" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/mobileSlider4.webp" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <img src="img/mobileSlider5.webp" alt="" />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="container w-[90vw] mx-auto pt-[100px] flex flex-col gap-[10px]"
+      >
+        <h2
+          class="text-[40px] mb-[20px] font-extralight text-center xl:text-left lg:text-left font-[Nunito] from-neutral-400"
+        >
+          Ən yeni <span class="text-[#ee2d39] lowercase">Kitablar</span>
+        </h2>
+        <div id="enCoxAxtarilanKitablar" class="cards"></div>
+      </div>
+      <div
+        class="container w-[90vw] mx-auto pt-[100px] flex flex-col gap-[10px]"
+      >
+        <h2
+          class="text-[40px] mb-[20px] font-extralight text-center xl:text-left lg:text-left font-[Nunito] from-neutral-400"
+        >
+          Ən çox <span class="text-[#ee2d39] lowercase">Baxılan</span>
+        </h2>
+        <div id="encoxbaxila" class="cards"></div>
+      </div>
+      <div
+        class="container w-[90vw] mx-auto pt-[100px] flex flex-col gap-[10px]"
+      >
+        <h2
+          class="text-[40px] mb-[20px] font-extralight text-center xl:text-left lg:text-left font-[Nunito] from-neutral-400"
+        >
+          <span class="text-[#ee2d39]"> May</span> bestseller
+        </h2>
+        <div id="encoxsatilankitablar" class="cards"></div>
+      </div>
+    </main>
+
+    <!-- Səbət -->
+    <div class="inline-block text-left">
+      <!-- Cart Menu -->
+      <div
+        id="cartMenu"
+        class="fixed hidden left-[69%] top-[12%] mt-2 w-[30vw] bg-white rounded-xl shadow-xl border border-gray-100 z-50"
+      >
+        <div
+          class="px-4 pt-3 pb-1 flex justify-between items-center text-sm font-semibold text-gray-700"
+        >
+          Səbətdəki məhsullar:
+          <button
+            id="closeCart"
+            onclick="sebet()"
+            class="text-gray-500 hover:text-black"
+          >
+            &times;
+          </button>
+        </div>
+        <div id="cart" class="px-4 py-6 text-sm text-center text-gray-500">
+          <p id="empty-cart-msg">Səbət boşdur</p>
+          <ul id="cart-items" class="space-y-2 mt-2"></ul>
+          <p class="mt-2 font-semibold">
+            Toplam: <span id="cart-total">0</span> AZN
+          </p>
+        </div>
+        <div class="border-t border-gray-100 px-4 py-3">
+          <button
+            class="w-full border border-red-500 text-red-600 py-2 rounded-full text-sm font-semibold hover:bg-red-50 transition"
+          >
+            Sifaris Ver
+          </button>
+        </div>
+      </div>
+    </div>
+
+  <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .campaign-header {
+            margin-bottom: 20px;
+        }
+        
+        .campaign-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .campaign-subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .countdown {
+            display: flex;
+            margin: 15px 0;
+        }
+        
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 5px;
+        }
+        
+        .countdown-value {
+            font-size: 28px;
+            font-weight: bold;
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            min-width: 60px;
+            text-align: center;
+        }
+        
+        .countdown-label {
+            font-size: 12px;
+            color: #777;
+            margin-top: 5px;
+        }
+        
+        .countdown-separator {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0 2px;
+            align-self: flex-start;
+            padding-top: 5px;
+        }
+        
+        .campaign-buttons {
+            display: flex;
+            margin: 15px 0;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background-color: #ff3b4a;
+            color: white;
+            border: none;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: #333;
+            border: none;
+            text-decoration: underline;
+        }
+        
+        .product-slider {
+            position: relative;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card {
+            flex: 0 0 220px;
+            margin-right: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .product-image {
+            height: 220px;
+           
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .product-info {
+            padding: 15px;
+        }
+        
+        .product-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            height: 42px;
+            overflow: hidden;
+        }
+        
+        .product-price {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        
+        .old-price {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        
+        .new-price {
+            color: #333;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 2;
+        }
+        
+        .prev {
+            left: 10px;
+        }
+        
+        .next {
+            right: 10px;
+        }
+        
+        .currency {
+            font-size: 14px;
+            vertical-align: super;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="campaign-header">
+            <h1 class="campaign-title">Seçilmiş məhsullara 50% Endirim</h1>
+            <p class="campaign-subtitle">Kampaniyanın bitməsinə qalan müddət:</p>
+            
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-value" id="days">13</div>
+                    <div class="countdown-label">gün</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="hours">15</div>
+                    <div class="countdown-label">saat</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="minutes">49</div>
+                    <div class="countdown-label">dəqiqə</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="seconds">46</div>
+                    <div class="countdown-label">saniyə</div>
+                </div>
+            </div>
+            
+            <div class="campaign-buttons">
+                <a href="#" class="btn btn-primary">Ətraflı</a>
+                <a href="#" class="btn btn-secondary">Bütün kampaniyalar</a>
+            </div>
+        </div>
+        
+        <div class="product-slider">
+            <div class="nav-button prev" onclick="moveSlider(-1)">❮</div>
+            <div class="slider-container" id="sliderContainer">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.libraff.az/images/thumbnails/400/600/from_1c/f8a032cf-5053-11eb-a4d2-503eaa128442_1.jpg.webp" alt="Oyna öyrən">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Oyna öyrən - Məktəbəqədər hazırlıq dəsti (8 kitab)</h3>
+                        <div class="product-price">
+                            <span class="old-price">22.00 <span class="currency">₼</span></span>
+                            <span class="new-price">11.00 <span class="currency">₼</span></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.libraff.az/images/thumbnails/400/600/from_1c/686e6058-7606-11ed-a513-503eaa120fc7_1.jpg.webp" alt="Dünya için bir şans">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Dünya için bir şans</h3>
+                        <div class="product-price">
+                            <span class="old-price">10.90 <span class="currency">₼</span></span>
+                            <span class="new-price">5.45 <span class="currency">₼</span></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.libraff.az/images/thumbnails/400/600/from_1c/bc1f674f-5050-11eb-a4d2-503eaa128442_1.jpg.webp" alt="Harry Potter Necklace">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Harry Potter Necklace - Snitch</h3>
+                        <div class="product-price">
+                            <span class="old-price">24.90 <span class="currency">₼</span></span>
+                            <span class="new-price">12.45 <span class="currency">₼</span></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.libraff.az/images/thumbnails/400/600/from_1c/6887d76a-5053-11eb-a4d2-503eaa128442_1.jpg.webp" alt="Puzzle Frame">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Puzzle Frame 24 Pieces Elena 24X34 Cm, D</h3>
+                        <div class="product-price">
+                            <span class="old-price">4.90 <span class="currency">₼</span></span>
+                            <span class="new-price">2.45 <span class="currency">₼</span></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.libraff.az/images/thumbnails/400/600/from_1c/bc1f674f-5050-11eb-a4d2-503eaa128442_1.jpg.webp" alt="Azərbaycan dili">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">4-cü sinif Azərbaycan dili -İzahlı dərs və tapşırıq dəsti</h3>
+                        <div class="product-price">
+                            <span class="old-price">24.00 <span class="currency">₼</span></span>
+                            <span class="new-price">12.00 <span class="currency">₼</span></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.libraff.az/images/thumbnails/400/600/from_1c/f8a032e7-5053-11eb-a4d2-503eaa128442_1.jpg.webp" alt="Ks Satranç">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ks Satranç Toys Rulo Satranç takımı</h3>
+                        <div class="product-price">
+                            <span class="old-price">8.50 <span class="currency">₼</span></span>
+                            <span class="new-price">4.25 <span class="currency">₼</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-button next" onclick="moveSlider(1)">❯</div>
+        </div>
+    </div>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            // Set the campaign end date (31 May 2025)
+            const endDate = new Date('May 31, 2025 23:59:59').getTime();
+            const now = new Date().getTime();
+            const timeLeft = endDate - now;
+            
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+                document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+                document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+                document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+            }
+        }
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Slider functionality
+        let currentPosition = 0;
+        const sliderContainer = document.getElementById('sliderContainer');
+        const productWidth = 235; // card width + margin
+        const productsCount = document.querySelectorAll('.product-card').length;
+        const visibleProducts = Math.floor(sliderContainer.parentElement.offsetWidth / productWidth);
+        
+        function moveSlider(direction) {
+            const maxPosition = productsCount - visibleProducts;
+            
+            if (direction > 0 && currentPosition < maxPosition) {
+                currentPosition++;
+            } else if (direction < 0 && currentPosition > 0) {
+                currentPosition--;
+            }
+            
+            sliderContainer.style.transform = `translateX(-${currentPosition * productWidth}px)`;
+        }
+        
+        // Initial setup
+        window.addEventListener('resize', function() {
+            const newVisibleProducts = Math.floor(sliderContainer.parentElement.offsetWidth / productWidth);
+            if (currentPosition > productsCount - newVisibleProducts) {
+                currentPosition = Math.max(0, productsCount - newVisibleProducts);
+                sliderContainer.style.transform = `translateX(-${currentPosition * productWidth}px)`;
+            }
+        });
+    </script>
+    
+
+
+     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        
+        .title {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        
+        .title span {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .books-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .book {
+            width: calc(25% - 15px);
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .book img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        
+        @media (max-width: 992px) {
+            .book {
+                width: calc(50% - 10px);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .book {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title"><span>Libraff</span>ın seçimləri</h1>
+        <div class="books-container">
+            <div class="book">
+                <img src="https://www.libraff.az/images/thumbnails/600/600/from_1c/0d19f329-7f11-11ef-a555-503eaa120fc7_1.jpg.webp" alt="Poetik diagnoz">
+            </div>
+            <div class="book">
+                <img src="https://www.libraff.az/images/thumbnails/600/600/from_1c/d8d3c811-7f10-11ef-a555-503eaa120fc7_1.jpg.webp" alt="Metanoya">
+            </div>
+            <div class="book">
+                <img src="https://www.libraff.az/images/thumbnails/600/600/from_1c/a235d6a1-7f10-11ef-a555-503eaa120fc7_1.jpg.webp" alt="Stoiklərin Həyatı">
+            </div>
+            <div class="book">
+                <img src="https://www.libraff.az/images/thumbnails/600/600/from_1c/b889cae5-bf6a-11ef-a56b-503eaa120fc7_1.jpg.webp" alt="Paralel Dünyada">
+            </div>
+        </div>
+    </div>
+
+     <style>
+        .browser-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .browser-controls button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .url-bar {
+            background-color: #3e2439;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 16px;
+            margin-left: 20px;
+            width: 150px;
+        }
+
+        .browser-actions {
+            margin-left: auto;
+            display: flex;
+            gap: 15px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            margin: 40px 0 30px 0;
+            font-size: 32px;
+            font-weight: normal;
+        }
+
+        .section-title span {
+            color: #e74c3c;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 30px;
+        }
+
+        .row-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .book-row {
+            display: flex;
+            gap: 30px;
+        }
+
+        .single-book {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .single-book .book-card {
+            max-width: 800px;
+            width: 100%;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            background-color: #ffefd5;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .single-book .book-cover {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .single-book .book-title {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        
+        .single-book .book-author {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .single-book .book-description {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .book-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            transition: transform 0.3s ease;
+            height: 250px;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .book-card.yellow {
+            background-color: #fff9d6;
+        }
+
+        .book-card.green {
+            background-color: #f0fae8;
+        }
+
+        .book-card.blue {
+            background-color: #e8f4fa;
+        }
+
+        .book-info {
+            flex: 1;
+        }
+
+        .book-title {
+            font-size: 24px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .book-author {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .book-description {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .book-cover {
+            width: 140px;
+            height: 200px;
+            object-fit: contain;
+            margin-left: 15px;
+        }
+
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #3b5998;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .status-bar {
+            background-color: #f1f1f1;
+            padding: 5px 15px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 12px;
+            color: #333;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .time {
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+    .book-row {
+        flex-direction: column; /* alt-alta düzülür */
+        gap: 20px;
+    }
+    .book-card {
+        width: 100%; /* tam genişlikdə olsun */
+        height: auto; /* hündürlük məzmunla uyğunlaşsın */
+        flex-direction: column; /* şəkil və info alt-alta */
+        align-items: flex-start;
+    }
+    .book-card .book-cover {
+        width: 100%;
+        max-width: 300px; /* şəkilin maksimum eni */
+        height: auto;
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+    .single-book .book-card {
+        max-width: 100%; /* böyük kart da tam eni alsın */
+        height: auto;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="section-title"><span>3alma</span> ən yenilər</h1>
+
+        <div class="row-container">
+            <!-- First row with 2 books in one div -->
+            <div class="book-row">
+                <div class="book-card">
+                    <div class="book-info">
+                        <div class="book-author">Viam Əhməd</div>
+                        <div class="book-title">70 kq</div>
+                        <p class="book-description">Sürətli çatdırılma şirkəti yükünüzü etibarlı şəkildə ünvanına çatdıracaq...</p>
+                    </div>
+                    <img src="https://www.libraff.az/images/abt__ut2/banners/all/1305/kitab5.webp" alt="70 kq book cover" class="book-cover">
+                </div>
+
+                <div class="book-card yellow">
+                    <div class="book-info">
+                        <div class="book-author">Reyhan Yusifqızı</div>
+                        <div class="book-title">Bir şəhər, bir liman</div>
+                        <p class="book-description">Tarixi keçmişimizi bu günümüzlə, bu günümüzü isə gələcəklə birləşdirən liman...</p>
+                    </div>
+                    <img src="https://www.libraff.az/images/abt__ut2/banners/all/1305/kitab_2_gqql-yq.webp" alt="Bir şəhər, bir liman book cover" class="book-cover">
+                </div>
+            </div>
+
+            <!-- Second row with the other 2 books in one div -->
+            <div class="book-row">
+                <div class="book-card green">
+                    <div class="book-info">
+                        <div class="book-author">Ramiz Rövşən</div>
+                        <div class="book-title">Dadlı günəş</div>
+                        <p class="book-description">Niyə hamı deyir: "Sən yaman odlu günəşsən". Yox, sən odlu deyilsən, sən lap dadlı günəşsən!</p>
+                    </div>
+                    <img src="https://www.libraff.az/images/abt__ut2/banners/all/1305/kitab_1.webp" alt="Dadlı günəş book cover" class="book-cover">
+                </div>
+
+                <div class="book-card blue">
+                    <div class="book-info">
+                        <div class="book-author">Erge Özcan</div>
+                        <div class="book-title">İtmiş kitab</div>
+                        <p class="book-description">...Lakin kitabı qoyduğu yerdə tapa bilmirdi. Elə macəra da bundan sonra başlayır.</p>
+                    </div>
+                    <img src="https://www.libraff.az/images/abt__ut2/banners/all/1305/kitab_4.webp" alt="İtmiş kitab book cover" class="book-cover">
+                </div>
+            </div>
+
+            <!-- Third row with single book in one div, centered and larger -->
+            <div class="book-row single-book">
+                <div class="book-card">
+                    <div class="book-info">
+                        <div class="book-author">Volkan Yavəroğlu</div>
+                        <div class="book-title">Alma ağacı</div>
+                        <p class="book-description">Qasırğa ən çox sevdikləri alma ağacının gövdəsini qırıb yana əymişdi. Bu kitab uşaqlar üçün təbiət sevgisi və dostluğun gücünü anladan bir macəradır.</p>
+                    </div>
+                    <img src="https://www.libraff.az/images/abt__ut2/banners/all/1305/kitab_3_7ad6-zr.webp" alt="Alma ağacı book cover" class="book-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer class="bg-gray-100 text-gray-800 text-sm mt-10">
+      <div
+        class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+      >
+        <div>
+          <h3 class="text-lg font-semibold mb-3 text-slate-600">Hesabım</h3>
+          <ul class="space-y-3">
+            <li><a href="#">Daxil ol</a></li>
+            <li><a href="#">Qeydiyyatdan keç</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-3 text-slate-600">Şirkət</h3>
+          <ul class="space-y-3">
+            <li><a href="#">Haqqımızda</a></li>
+            <li><a href="#">Əlaqə</a></li>
+            <li><a href="#">Vakansiyalar</a></li>
+            <li><a href="#">Sayt Xəritəsi</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-3 text-slate-600">
+            Müştəri Xidməti
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="#">Dəyişdirilmə və qaytarılma</a>
+            </li>
+            <li>
+              <a href="#">Ödəniş və çatdırılma</a>
+            </li>
+            <li>
+              <a href="#">Sifarişiniz haqqında</a>
+            </li>
+            <li><a href="#">Seçilmişlər</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-3 text-slate-600">Əlaqə</h3>
+          <ul class="space-y-3">
+            <li>
+              Bakı, Badamdar qəs., Mikayıl Müşfiq küç. 1c <br />(Badamdar
+              Estates)
+            </li>
+            <li>
+              <a href="tel:+994502904496">+994-50-290-44-96</a>
+            </li>
+            <li>B.e.-B. 9.00 - 18.00</li>
+            <li>
+              <a href="mailto:online@libraff.az">online@libraff.az</a>
+            </li>
+            <li>
+              <a style="text-decoration: underline;"
+                href="https://yandex.az/maps/10253/baku/house/YEAYfgdjS0cPQFpqfX90dXVmZA==/?ll=49.803228%2C40.354951&z=16"
+                class="text-blue-700"
+                >Xəritədə bax</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-left text-gray-600 py-4 px-4 border-t border-gray-300">
+        © 2017 - 2025 Libraff.
+      </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script src="js/script.js"></script>
+    <script type="module" src="js/index.js"></script>
+    <script type="module" src="js/swiper.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+[
+    {
+      "category": "Kitablar",
+      "subcategories": [
+        {
+          "name": "Bədii ədəbiyyat",
+          "subcategories": [
+            { "name": "Romanlar & Novellalar" },
+            { "name": "Detektiv" },
+            { "name": "Elmi-fantastika & Fantaziya" },
+            { "name": "Macəra" },
+            { "name": "Triller, mistika & Qorxu" }
+          ]
+        },
+        {
+          "name": "Qeyri-bədii ədəbiyyat",
+          "subcategories": [
+            { "name": "Bioqrafiya & Avtobioqrafiya" },
+            { "name": "Psixologiya" },
+            { "name": "Tarix & Siyasət" },
+            { "name": "Fəlsəfə" },
+            { "name": "Təhsil & Dil" }
+          ]
+        },
+        {
+          "name": "Uşaq ədəbiyyatı",
+          "subcategories": [
+            { "name": "Nağıllar" },
+            { "name": "Maarifləndirici kitablar" },
+            { "name": "Macəra hekayələri" },
+            { "name": "Rəngləmə kitabları" },
+            { "name": "Şeirlər və tapmacalar" }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Məqalələr",
+      "subcategories": [
+        {
+          "name": "Kitab icmalları",
+          "subcategories": [
+            { "name": "Yeni çıxanlar" },
+            { "name": "Ən çox satılanlar" },
+            { "name": "Klassik əsərlər" }
+          ]
+        },
+        {
+          "name": "Müəlliflə müsahibələr",
+          "subcategories": [
+            { "name": "Yerli müəlliflər" },
+            { "name": "Xarici müəlliflər" },
+            { "name": "Debüt edən yazıçılar" }
+          ]
+        },
+        {
+          "name": "Ədəbi analizlər",
+          "subcategories": [
+            { "name": "Simvolizm & Mövzu" },
+            { "name": "Obrazlar & xarakterlər" },
+            { "name": "Əsərin dili və üslubu" }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Elektronika və Aksessuarlar",
+      "subcategories": [
+        {
+          "name": "E-book oxuyucular",
+          "subcategories": [
+            { "name": "Amazon Kindle" },
+            { "name": "PocketBook" },
+            { "name": "Onyx Boox" }
+          ]
+        },
+        {
+          "name": "Kitab üçün aksessuarlar",
+          "subcategories": [
+            { "name": "Oxu lampaları" },
+            { "name": "Kitab tutacaqları" },
+            { "name": "Kitab çantaları" }
+          ]
+        },
+        {
+          "name": "Mobil aksesuarlar",
+          "subcategories": [
+            { "name": "Powerbank" },
+            { "name": "Qulaqlıq" },
+            { "name": "Telefon stendi" }
+          ]
+        }
+      ]
+    }
+  ]
+  
